@@ -1,3 +1,9 @@
+{{
+    config(
+        dagster_freshness_policy={"maximum_lag_minutes": 10}
+    )
+}}
+
 with mart_gh_stargazer as (
     select *
     from {{ source('mart', 'mart_gh_stargazer') }}
@@ -5,7 +11,7 @@ with mart_gh_stargazer as (
 mart_gh_cumulative as (
     select *
     from {{ ref('mart_gh_cumulative') }}
-),
+)
 
 select 
     mart_gh_stargazer.repository

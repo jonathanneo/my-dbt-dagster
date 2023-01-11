@@ -40,7 +40,7 @@ models:
   stargazers:
     # When schema changes on models we are building, we should run dbt with --full-refresh flag explicitely
     +on_schema_change: "fail"
-    +materialized: view
+    +materialized: table
     staging:
       +tags: staging
       +materialized: view
@@ -49,5 +49,5 @@ models:
       +materialized: view
       +schema: core
     mart:
-      +materialized: view
+      +materialized: table
       +schema: mart
