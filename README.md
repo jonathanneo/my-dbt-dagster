@@ -38,12 +38,12 @@ docker-compose up
 Install dbt dependencies by running:
 
 ```bash
-cd transformation_dbt1
+cd dbt_project_1
 dbt deps 
 ```
 
 ```bash
-cd transformation_dbt2
+cd dbt_project_2
 dbt deps 
 ```
 
@@ -83,15 +83,3 @@ dagit -m assets_modern_data_stack.my_asset
 You'll see the assets of airbyte, dbt that are created automatically in this demo.
 
 You can click "materialize" inside dagit to sync airbyte connections and run dbt.
-
-
-## Start the BI Dashbaord with Meltano
-
-Start it in a separate shell and follow the docs [Metabase Readme](../../visualization/metabase/readme.md).
-
-
-See a step-by-step guide on [Airbyte Blog](https://airbyte.com/tutorials/configure-airbyte-with-python-dagster).
-
-
-
-

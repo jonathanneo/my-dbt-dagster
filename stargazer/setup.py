@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 setup(
     name="assets_modern_data_stack",
     packages=find_packages(exclude=["assets_modern_data_stack_tests"]),
-    package_data={"assets_modern_data_stack": ["transformation_dbt/*"]},
+    package_data={"assets_modern_data_stack": ["dbt_project_1/*", "dbt_project_2/*"]},
     install_requires=[
         "dagster",
         "dagster-airbyte",
@@ -11,13 +11,8 @@ setup(
         "dagster-dbt",
         "dagster-postgres",
         "pandas",
-        "numpy",
-        "scipy",
         "dbt-core",
         "dbt-postgres",
-        "aiohttp",
-        "requests",
-        "beautifulsoup4",
     ],
     extras_require={"dev": ["dagit", "pytest", "black"]},
 )

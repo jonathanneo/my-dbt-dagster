@@ -11,10 +11,7 @@ from .utils.constants import DBT_CONFIG1, DBT_CONFIG2, POSTGRES_CONFIG
 
 from dagster import (
     AssetSelection,
-    Definitions,
-    FreshnessPolicy,
     ScheduleDefinition,
-    asset,
     build_asset_reconciliation_sensor,
     define_asset_job,
 )
@@ -29,7 +26,6 @@ from dagster_airbyte.managed.generated.sources import GithubSource
 from dagster_airbyte.managed.generated.destinations import (
     PostgresDestination,
 )
-from typing import List
 from dagster_dbt import load_assets_from_dbt_project
 
 import os
@@ -39,7 +35,6 @@ AIRBYTE_PERSONAL_GITHUB_TOKEN = os.environ.get(
     "AIRBYTE_PERSONAL_GITHUB_TOKEN", "please-set-your-token"
 )
 POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD", "please-set-your-token")
-
 
 airbyte_instance = airbyte_resource.configured(
     {
