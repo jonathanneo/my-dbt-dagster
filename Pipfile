@@ -3,11 +3,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
-[packages]
-dagster = "*"
-dagster-dbt = "*"
-
-
 [dev-packages]
 
 [requires]
