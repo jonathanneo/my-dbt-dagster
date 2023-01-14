@@ -87,21 +87,21 @@ airbyte_assets = load_assets_from_connections(
 
 # preparing assets bassed on existing dbt project
 dbt_assets_1 = load_assets_from_dbt_project(
-    project_dir=DBT_PROJECT_DIR1, select="mart_gh_stargazer", dbt_resource_key="dbt1", io_manager_key="db_io_manager1"
+    project_dir=DBT_PROJECT_DIR1, dbt_resource_key="dbt1", io_manager_key="db_io_manager1", exclude="source:*"
 )
 
 dbt_assets_2 = load_assets_from_dbt_project(
-    project_dir=DBT_PROJECT_DIR2, select="mart_gh_cumulative mart_gh_join", dbt_resource_key="dbt2", io_manager_key="db_io_manager2"
+    project_dir=DBT_PROJECT_DIR2, dbt_resource_key="dbt2", io_manager_key="db_io_manager2"
 )
 
 update_sensor = build_asset_reconciliation_sensor(
-    name="update_sensor", asset_selection=AssetSelection.all()  #  keys("postgres1/mart/mart_gh_stargazer", "postgres2/mart/mart_gh_cumulative" )
+    name="update_sensor", asset_selection=AssetSelection.all() 
 )
 
 my_job = define_asset_job(name="my_job", selection=AssetSelection.keys("postgres/stargazers", "postgres/stargazers_user"))
 
 my_job_schedule = ScheduleDefinition(
-    name="my_job_schedule", job=my_job, cron_schedule="* * * * *"
+    name="my_job_schedule", job=my_job, cron_schedule="*/30 * * * *"
 )
 
 @repository
