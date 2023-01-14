@@ -195,7 +195,7 @@ You'll notice the following behaviours:
 
 ![10-minute-freshness](/docs/images/10-minute-freshness.png)
 
-5. `mart_gh_stargazer` will materialize every 10 minutes because it needs to do so to keep `mart_gh_join` fresh. 
+5. `mart_gh_stargazer` will materialize every 10 minutes because it needs to do so to keep `mart_gh_join` fresh. It's dbt model [mart_gh_stargazer.sql](stargazer/dbt_project_1/models/mart/mart_gh_stargazer.sql) does not have a freshness policy.
 
 ![fresh](/docs/images/fresh.png)
 
