@@ -183,7 +183,7 @@ You'll notice the following behaviours:
 
 ![airbyte](/docs/images/airbyte-assets.png)
 
-2. The two dbt projects [dbt_project_1](./stargazer/dbt_project_1/) and [dbt_project_2](./stargazer/dbt_project_2/), are now seen as part of the same global asset lineage in dagster without any de-lineation between dbt projects. 
+2. The two dbt projects [dbt_project_1](./stargazer/dbt_project_1/) and [dbt_project_2](./stargazer/dbt_project_2/), are now seen as part of the same global asset lineage in dagster without any separation between dbt projects. 
 
 ![dbt-projects](/docs/images/dbt-projects.png)
 
