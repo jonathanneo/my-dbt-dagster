@@ -123,7 +123,7 @@ dbt deps
 ```
 
 ```bash
-cd stargazer/dbt_project_1
+cd stargazer/dbt_project_2
 dbt deps 
 ```
 
