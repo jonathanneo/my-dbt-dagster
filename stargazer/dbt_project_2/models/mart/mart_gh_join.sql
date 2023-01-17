@@ -1,6 +1,6 @@
 {{
     config(
-        dagster_freshness_policy={"maximum_lag_minutes": 10}
+        dagster_freshness_policy={"maximum_lag_minutes": 9*60, "cron_schedule": "0 9 * * *"}
     )
 }}
 
